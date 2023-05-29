@@ -1,6 +1,8 @@
 # Agrigenie
 
-![App Preview](app_preview.png)
+![Screenshot_1685382526](https://github.com/pawanbhayde/agrigenie/assets/82137686/d5d672d1-081b-4b83-91df-810da5c6f1c4)
+![Screenshot_1685382546](https://github.com/pawanbhayde/agrigenie/assets/82137686/2951a0f1-a120-45e8-9005-39a1481d9845)
+
 
 ## Overview
 
