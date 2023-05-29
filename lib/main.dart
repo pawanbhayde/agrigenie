@@ -1,5 +1,4 @@
 import 'package:agrigenie/pages/homepage.dart';
-import 'package:agrigenie/pages/homepage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
