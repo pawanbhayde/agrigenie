@@ -1,4 +1,5 @@
 import 'package:agrigenie/pages/homepage.dart';
+import 'package:agrigenie/pages/navigator.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: HomePage(),
+      home: MainNavigation(),
     );
   }
 }

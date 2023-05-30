@@ -48,25 +48,22 @@ class HomePage extends StatelessWidget {
               'assets/2.png',
               'assets/3.png',
             ]),
-            const Padding(
-              padding: EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  UserAndLocation(),
-                  SizedBox(height: 20),
-                  PredicationBox(),
-                  SizedBox(height: 20),
-                  Text(
-                    "Recommanded Crops",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-            ),
+            const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                UserAndLocation(),
+                SizedBox(height: 20),
+                PredicationBox(),
+                SizedBox(height: 20),
+                Text(
+                  "Recommended Crops",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ).p16(),
             const RecommandedCrop(),
             const Text(
-              "Recommanded Fertilisers",
+              "Recommended Fertilisers",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ).p16(),
             const RecommandedFertilisers(),

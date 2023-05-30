@@ -1,4 +1,5 @@
 import 'package:agrigenie/component/HomeBox.dart';
+import 'package:agrigenie/pages/predictionpage.dart';
 import 'package:flutter/material.dart';
 
 class PredicationBox extends StatelessWidget {
@@ -65,7 +66,12 @@ class PredicationBox extends StatelessWidget {
             height: 50,
             child: ElevatedButton(
               onPressed: () {
-                // Implement login functionality here
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PredictionPage(),
+                  ),
+                );
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xff00A45F),
