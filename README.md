@@ -26,7 +26,7 @@ To get started with the Farmer's Crop Prediction App, follow these steps:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/your-username/farmers-crop-prediction-app.git
+   git clone https://github.com/pawanbhayde/agrigenie.git
    ```
 2. Install Flutter by following the official Flutter installation guide: Flutter Installation
 
