@@ -1,5 +1,5 @@
 import 'package:agrigenie/pages/cropinfopage.dart';
-import 'package:agrigenie/pages/homepage.dart';
+import 'package:agrigenie/pages/fertilizerinfopage.dart';
 import 'package:agrigenie/pages/navigator.dart';
 import 'package:flutter/material.dart';
 
@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
       home: MainNavigation(),
       routes: {
         '/cropInfo': (context) => CropInfoPage(),
+        '/fertilizerInfo': (context) => FertilizerInfoPage(),
       },
     );
   }

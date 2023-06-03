@@ -122,7 +122,7 @@ class RecommandedCrop extends StatelessWidget {
                         child: Text(
                           crop.title,
                           style: const TextStyle(
-                              color: Colors.black,
+                              color: Colors.white,
                               fontSize: 18,
                               fontWeight: FontWeight.bold),
                         ),
@@ -162,7 +162,13 @@ class RecommandedFertilisers extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.only(left: 16, bottom: 16),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  '/fertilizerInfo',
+                  arguments: cropDescriptions[index],
+                );
+              },
               child: Container(
                 width: 200,
                 height: 200,
@@ -188,7 +194,7 @@ class RecommandedFertilisers extends StatelessWidget {
                         child: Text(
                           fertilizer.title,
                           style: const TextStyle(
-                              color: Colors.black,
+                              color: Colors.white,
                               fontSize: 18,
                               fontWeight: FontWeight.bold),
                         ),

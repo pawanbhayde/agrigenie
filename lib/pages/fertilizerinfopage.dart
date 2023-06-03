@@ -1,11 +1,11 @@
 import 'package:agrigenie/component/RoundedBox.dart';
-import 'package:agrigenie/data/cropdata.dart';
 import 'package:agrigenie/pages/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class CropInfoPage extends StatelessWidget {
-  CropInfoPage({Key? key});
+class FertilizerInfoPage extends StatelessWidget {
+  FertilizerInfoPage({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class CropInfoPage extends StatelessWidget {
               image: const DecorationImage(
                 fit: BoxFit.cover,
                 image: NetworkImage(
-                    "https://upload.wikimedia.org/wikipedia/commons/a/a3/Vehn%C3%A4pelto_6.jpg"),
+                    "https://m.media-amazon.com/images/I/71yy+QZTCHL._SX466_.jpg"),
               ),
               boxShadow: [
                 BoxShadow(
@@ -70,29 +70,62 @@ class CropInfoPage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          const RoundedBox(
+          RoundedBox(
               child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Wheat",
+              const Text(
+                "NPK",
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 10),
-              Text(
-                "Wheat is typically milled into flour which is then used to make a wide range of foods including bread, crumpets, muffins, noodles, pasta, biscuits, cakes, pastries, cereal bars, sweet and savoury snack foods, crackers, crisp-breads, sauces and confectionery (e.g. liquorice).",
+              const SizedBox(height: 10),
+              const Text(
+                "NPK fertilizer is a type of fertilizer that contains three primary nutrients: nitrogen (N), phosphorus (P), and potassium (K). It is commonly used in agricultural practices to promote plant growth and improve crop yield.",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
+              SizedBox(
+                width: double.infinity,
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: () {
+                    _launchAmazonWebsite();
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xff00A45F),
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                  ),
+                  child: const Text(
+                    'Buy Now',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17),
+                  ),
+                ),
+              ),
             ],
-          )), 
-          Text(
-            "Recommended Fertilisers",
+          )),
+          const Text(
+            "Recommended Crops",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ).p16(),
-          const RecommandedFertilisers(),
+          const RecommandedCrop(),
         ]).p16(),
       ),
     );
+  }
+
+  Future<void> _launchAmazonWebsite() async {
+    const url =
+        'https://www.amazon.com'; // Replace with your Amazon product URL
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }

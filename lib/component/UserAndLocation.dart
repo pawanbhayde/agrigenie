@@ -15,7 +15,7 @@ class UserAndLocation extends StatelessWidget {
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         Container(
-          width: 100,
+          
           height: 30,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
