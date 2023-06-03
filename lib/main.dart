@@ -1,3 +1,4 @@
+import 'package:agrigenie/pages/cropinfopage.dart';
 import 'package:agrigenie/pages/homepage.dart';
 import 'package:agrigenie/pages/navigator.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: MainNavigation(),
+      routes: {
+        '/cropInfo': (context) => CropInfoPage(),
+      },
     );
   }
 }

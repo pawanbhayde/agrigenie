@@ -1,4 +1,5 @@
 import 'package:agrigenie/component/RoundedBox.dart';
+import 'package:agrigenie/pages/cropinfopage.dart';
 import 'package:agrigenie/pages/termsandcondition.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -99,7 +100,7 @@ class ProfilePage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => MyApp(),
+                          builder: (context) => CropInfoPage(),
                         ),
                       );
                     },
