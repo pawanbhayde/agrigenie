@@ -21,10 +21,10 @@ class HomeBox extends StatelessWidget {
           width: 40,
           height: 40,
           decoration: const BoxDecoration(
-              shape: BoxShape.circle, color: Color(0xffFFE569)),
+              shape: BoxShape.circle, color: Color(0xffC4FFBA)),
           child: Icon(
             icon,
-            color: Colors.white,
+            color: Colors.black,
           ),
         ),
         const SizedBox(width: 8),

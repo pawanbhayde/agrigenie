@@ -1,4 +1,5 @@
 import 'package:agrigenie/component/HomeBox.dart';
+import 'package:agrigenie/component/RoundedBox.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -34,23 +35,7 @@ class PredictionPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: VStack([
-          Container(
-            padding: const EdgeInsets.all(20),
-            width: double.infinity,
-            decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.07),
-                    offset: const Offset(16, 16),
-                    blurRadius: 40,
-                  ),
-                ],
-                border: Border.all(
-                  width: 1,
-                  color: const Color(0xff14FF00),
-                ),
-                borderRadius: BorderRadius.circular(11)),
+          RoundedBox(
             child: VStack([
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -211,24 +196,8 @@ class PredictionPage extends StatelessWidget {
             ]),
           ),
           const SizedBox(height: 20),
-          Container(
-            padding: const EdgeInsets.all(20),
-            width: double.infinity,
-            decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.07),
-                    offset: const Offset(16, 16),
-                    blurRadius: 40,
-                  ),
-                ],
-                border: Border.all(
-                  width: 1,
-                  color: const Color(0xff14FF00),
-                ),
-                borderRadius: BorderRadius.circular(11)),
-            child: const VStack([
+          const RoundedBox(
+            child: VStack([
               Text(
                 'Predicted Crop',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),

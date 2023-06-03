@@ -1,5 +1,6 @@
 import 'package:agrigenie/pages/homepage.dart';
 import 'package:agrigenie/pages/predictionpage.dart';
+import 'package:agrigenie/pages/profilepage.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -12,7 +13,7 @@ class MainNavigation extends StatefulWidget {
 
 class _MainNavigationState extends State<MainNavigation> {
   int selectedPage = 0;
-  final pages = [HomePage(), PredictionPage()];
+  final pages = [const HomePage(), const PredictionPage(), const ProfilePage()];
 
   @override
   Widget build(BuildContext context) {
@@ -21,18 +22,18 @@ class _MainNavigationState extends State<MainNavigation> {
       bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           currentIndex: selectedPage,
-          fixedColor: Color(0xff00A45F),
-          unselectedItemColor: Color(0xFF757575),
+          fixedColor: const Color(0xff00A45F),
+          unselectedItemColor: const Color(0xFF757575),
           onTap: (position) {
             setState(() {
               selectedPage = position;
             });
           },
-          items: [
+          items: const [
             BottomNavigationBarItem(icon: Icon(Iconsax.home), label: "Home"),
             BottomNavigationBarItem(
                 icon: Icon(Iconsax.health), label: "Predict"),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: "Account")
+            BottomNavigationBarItem(icon: Icon(Iconsax.user), label: "Account")
           ]),
     );
   }
