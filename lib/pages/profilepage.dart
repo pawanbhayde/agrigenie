@@ -1,5 +1,6 @@
 import 'package:agrigenie/component/RoundedBox.dart';
 import 'package:agrigenie/pages/cropinfopage.dart';
+import 'package:agrigenie/pages/privacypolicy.dart';
 import 'package:agrigenie/pages/termsandcondition.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -50,7 +51,7 @@ class ProfilePage extends StatelessWidget {
                     ),
                   ),
                 ).px20().py20(),
-                ProfilePageTexts(),
+                const ProfilePageTexts(),
                 ListTile(
                     title: const Text(
                       'Email',
@@ -104,7 +105,7 @@ class ProfilePage extends StatelessWidget {
                         ),
                       );
                     },
-                    child: ListTile(
+                    child: const ListTile(
                       leading: Icon(Iconsax.setting),
                       title: Text(
                         "Setting",
@@ -113,20 +114,40 @@ class ProfilePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  ListTile(
-                    leading: Icon(Iconsax.shield),
-                    title: Text(
-                      "Privacy Policy",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PrivacyPolicyPage(),
+                        ),
+                      );
+                    },
+                    child: const ListTile(
+                      leading: Icon(Iconsax.shield),
+                      title: Text(
+                        "Privacy Policy",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
                     ),
                   ),
-                  ListTile(
-                    leading: Icon(Iconsax.security_user),
-                    title: Text(
-                      "Terms and conditions",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => TermsAndConditionsPage(),
+                        ),
+                      );
+                    },
+                    child: const ListTile(
+                      leading: Icon(Iconsax.security_user),
+                      title: Text(
+                        "Terms and conditions",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
                     ),
                   )
                 ],

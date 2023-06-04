@@ -8,7 +8,7 @@ class RoundedBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: child,
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(16),
       width: double.infinity,
       decoration: BoxDecoration(
           color: Colors.white,

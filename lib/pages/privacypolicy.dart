@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
-class TermsAndConditionsPage extends StatefulWidget {
+class PrivacyPolicyPage extends StatefulWidget {
   @override
-  _TermsAndConditionsPageState createState() => _TermsAndConditionsPageState();
+  _PrivacyPolicyPageState createState() => _PrivacyPolicyPageState();
 }
 
-class _TermsAndConditionsPageState extends State<TermsAndConditionsPage> {
-  Future<String> _loadTermsAndConditions() async {
-    return await rootBundle.loadString('assets/terms.md');
+class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
+  Future<String> _loadPrivacyPolicy() async {
+    return await rootBundle.loadString('assets/policy.md');
   }
 
   @override
@@ -38,7 +38,7 @@ class _TermsAndConditionsPageState extends State<TermsAndConditionsPage> {
         padding: const EdgeInsets.all(16.0),
         child: RoundedBox(
           child: FutureBuilder<String>(
-            future: _loadTermsAndConditions(),
+            future: _loadPrivacyPolicy(),
             builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
               if (snapshot.hasData) {
                 return Markdown(data: snapshot.data!);

@@ -18,6 +18,7 @@ class _MainNavigationState extends State<MainNavigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: pages[selectedPage],
       bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
