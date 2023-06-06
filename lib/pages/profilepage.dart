@@ -14,13 +14,12 @@ class ProfilePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         elevation: 0,
         backgroundColor: const Color(0xffffffff),
         leading: IconButton(
           icon: const Icon(Icons.menu),
-          onPressed: () {
-            // Handle menu button press
-          },
+          onPressed: () {},
         ),
         centerTitle: true,
         title: Image.asset(

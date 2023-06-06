@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:unicons/unicons.dart';
 
-class AgricultureLoginPage extends StatelessWidget {
+class AgricultureLoginPage extends StatefulWidget {
+  @override
+  State<AgricultureLoginPage> createState() => _AgricultureLoginPageState();
+}
+
+class _AgricultureLoginPageState extends State<AgricultureLoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,6 +28,8 @@ class AgricultureLoginPage extends StatelessWidget {
               ),
               SizedBox(height: 40.0),
               TextFormField(
+                keyboardType: TextInputType.emailAddress,
+                onChanged: (value) {},
                 decoration: InputDecoration(
                   labelText: 'Email',
                   filled: true,
@@ -31,12 +38,13 @@ class AgricultureLoginPage extends StatelessWidget {
               ),
               SizedBox(height: 20.0),
               TextFormField(
+                obscureText: true,
+                onChanged: (value) {},
                 decoration: InputDecoration(
                   labelText: 'Password',
                   filled: true,
                   fillColor: Colors.white.withOpacity(0.7),
                 ),
-                obscureText: true,
               ),
               Align(
                 alignment: Alignment.centerRight,
@@ -57,9 +65,7 @@ class AgricultureLoginPage extends StatelessWidget {
                 width: double.infinity,
                 height: 60,
                 child: ElevatedButton(
-                  onPressed: () {
-                    // Implement login functionality here
-                  },
+                  onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green,
                     elevation: 0,

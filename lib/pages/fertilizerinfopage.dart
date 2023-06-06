@@ -2,7 +2,6 @@ import 'package:agrigenie/component/RoundedBox.dart';
 import 'package:agrigenie/pages/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class FertilizerInfoPage extends StatelessWidget {
   FertilizerInfoPage({Key? key});
@@ -88,9 +87,7 @@ class FertilizerInfoPage extends StatelessWidget {
                 width: double.infinity,
                 height: 50,
                 child: ElevatedButton(
-                  onPressed: () {
-                    _launchAmazonWebsite();
-                  },
+                  onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xff00A45F),
                     elevation: 0,
@@ -117,15 +114,5 @@ class FertilizerInfoPage extends StatelessWidget {
         ]).p16(),
       ),
     );
-  }
-
-  Future<void> _launchAmazonWebsite() async {
-    const url =
-        'https://www.amazon.com'; // Replace with your Amazon product URL
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
   }
 }

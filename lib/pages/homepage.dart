@@ -3,6 +3,7 @@ import 'package:agrigenie/component/UserAndLocation.dart';
 import 'package:agrigenie/component/carousel.dart';
 import 'package:agrigenie/data/cropdata.dart';
 import 'package:agrigenie/data/fertilizerdata.dart';
+import 'package:agrigenie/pages/notificationpage.dart';
 import 'package:flutter/material.dart';
 import 'package:glass/glass.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -17,14 +18,9 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         elevation: 0,
         backgroundColor: const Color(0xffC4FFBA),
-        leading: IconButton(
-          icon: const Icon(Icons.menu),
-          onPressed: () {
-            // Handle menu button press
-          },
-        ),
         centerTitle: true,
         title: Image.asset(
           'assets/appbarlogo.png', // Replace with your logo image path
@@ -34,7 +30,12 @@ class HomePage extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.notifications),
             onPressed: () {
-              // Handle notification button press
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => NotificationPage(),
+                ),
+              );
             },
           ),
         ],

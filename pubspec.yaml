@@ -24,7 +24,9 @@ dependencies:
   iconsax: ^0.0.8
   markdown: ^7.1.0
   flutter_markdown: ^0.6.15
-  url_launcher: ^6.1.11
+  firebase_core: ^2.13.1
+  firebase_auth: ^4.6.2
+  firebase_app_check: ^0.1.4+2
 
 dev_dependencies:
   flutter_test:

@@ -27,7 +27,7 @@ class _CarouselWithDotsPageState extends State<CarouselWithDotsPage> {
                 Image.asset(
                   item,
                   fit: BoxFit.cover,
-                  width: 800,
+                  width: 900,
                 ),
                 Positioned(
                   bottom: 0.0,
