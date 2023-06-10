@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "397118529645",
-    "project_id": "agrigenie-645cb",
-    "storage_bucket": "agrigenie-645cb.appspot.com"
+    "project_number": "419275667763",
+    "project_id": "agrigenie-d174f",
+    "storage_bucket": "agrigenie-d174f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:397118529645:android:135606c9dfa15a9d271f64",
+        "mobilesdk_app_id": "1:419275667763:android:6ff7ea73ca21d31803e646",
         "android_client_info": {
-          "package_name": "com.app.agrigenie"
+          "package_name": "com.example.agrigenie"
         }
       },
       "oauth_client": [
         {
-          "client_id": "397118529645-ha966ljmd1hujvv9qeafp286j51rajcl.apps.googleusercontent.com",
+          "client_id": "419275667763-ih8tqsbepnsjpdnnjs9aubkf09hs16tj.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAOzikJQIAJZiWzKJ7DbSU1p0ySD9-zDfo"
+          "current_key": "AIzaSyBIahAwROn-PNyJjRh4wQnvjQhXxrCaBn8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "397118529645-ha966ljmd1hujvv9qeafp286j51rajcl.apps.googleusercontent.com",
+              "client_id": "419275667763-ih8tqsbepnsjpdnnjs9aubkf09hs16tj.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

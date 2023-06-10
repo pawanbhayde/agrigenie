@@ -2,13 +2,19 @@ import 'package:agrigenie/component/RoundedBox.dart';
 import 'package:agrigenie/pages/cropinfopage.dart';
 import 'package:agrigenie/pages/privacypolicy.dart';
 import 'package:agrigenie/pages/termsandcondition.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
 
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -148,12 +154,58 @@ class ProfilePage extends StatelessWidget {
                             fontWeight: FontWeight.bold, fontSize: 20),
                       ),
                     ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SignOutAlertDialog(),
+                        ),
+                      );
+                    },
+                    child: const ListTile(
+                      leading: Icon(Iconsax.logout),
+                      title: Text(
+                        "Sign out",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
+                    ),
                   )
                 ],
               ),
             ),
           ],
         ).p16(),
+      ),
+    );
+  }
+}
+
+class SignOutAlertDialog extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: AlertDialog(
+        title: const Text('Sign Out'),
+        content: const Text('Are you sure you want to sign out?'),
+        actions: [
+          ElevatedButton(
+            child: const Text('Cancel'),
+            onPressed: () {
+              Navigator.of(context).pop(); // Close the alert dialog
+            },
+          ),
+          ElevatedButton(
+            child: const Text('Sign Out'),
+            onPressed: () {
+              Future<void> _signOut() async {
+                await FirebaseAuth.instance.signOut();
+              }
+            },
+          ),
+        ],
       ),
     );
   }
