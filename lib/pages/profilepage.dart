@@ -1,5 +1,6 @@
 import 'package:agrigenie/component/RoundedBox.dart';
 import 'package:agrigenie/pages/cropinfopage.dart';
+import 'package:agrigenie/pages/loginpage.dart';
 import 'package:agrigenie/pages/privacypolicy.dart';
 import 'package:agrigenie/pages/termsandcondition.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -160,7 +161,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SignOutAlertDialog(),
+                          builder: (context) => AgricultureLoginPage(),
                         ),
                       );
                     },

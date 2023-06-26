@@ -1,7 +1,6 @@
 import 'package:agrigenie/firebase_options.dart';
 import 'package:agrigenie/pages/cropinfopage.dart';
 import 'package:agrigenie/pages/fertilizerinfopage.dart';
-import 'package:agrigenie/pages/homepage.dart';
 import 'package:agrigenie/pages/loginpage.dart';
 import 'package:agrigenie/pages/navigator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -10,6 +9,7 @@ import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

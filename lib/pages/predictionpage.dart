@@ -1,10 +1,34 @@
 import 'package:agrigenie/component/HomeBox.dart';
 import 'package:agrigenie/component/RoundedBox.dart';
 import 'package:flutter/material.dart';
+import 'package:tflite_flutter/tflite_flutter.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class PredictionPage extends StatelessWidget {
+class PredictionPage extends StatefulWidget {
   const PredictionPage({super.key});
+
+  @override
+  State<PredictionPage> createState() => _PredictionPageState();
+}
+
+class _PredictionPageState extends State<PredictionPage> {
+  var predValur = "";
+  @override
+  void initState() {
+    super.initState();
+    predValur = "Click to Predict";
+  }
+
+  Future<void> predData() async {
+    var interpreter = await Interpreter.fromAsset('assets/model.tflite');
+    var input = [10, 20, 80, 7.2, 35, 80, 6, 2, 1100];
+    var output = List.filled(1, 0).reshape([1, 1]);
+    interpreter.run(input, output);
+    print(output[0][0]);
+    setState(() {
+      predValur = output[0][0].toString();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -176,7 +200,7 @@ class PredictionPage extends StatelessWidget {
                 width: double.infinity,
                 height: 50,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: predData,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xff00A45F),
                     elevation: 0,
@@ -196,17 +220,17 @@ class PredictionPage extends StatelessWidget {
             ]),
           ),
           const SizedBox(height: 20),
-          const RoundedBox(
+          RoundedBox(
             child: VStack([
-              Text(
+              const Text(
                 'Predicted Crop',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Center(
                 child: Text(
-                  'Sugarcane',
-                  style: TextStyle(
+                  '$predValur',
+                  style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 27,
                       color: Color(0xff00A45F)),

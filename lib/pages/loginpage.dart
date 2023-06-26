@@ -1,4 +1,5 @@
 import 'package:agrigenie/firebase/auth.dart';
+import 'package:agrigenie/pages/signuppage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:unicons/unicons.dart';
@@ -9,7 +10,7 @@ class AgricultureLoginPage extends StatefulWidget {
 }
 
 class _AgricultureLoginPageState extends State<AgricultureLoginPage> {
-  final bool _isLogin = false;
+  final bool _isLogin = true;
   bool _loading = false;
   final _formKey = GlobalKey<FormState>();
 
@@ -124,9 +125,35 @@ class _AgricultureLoginPageState extends State<AgricultureLoginPage> {
                             ),
                           )
                         : Text(
-                            _isLogin ? 'Login' : 'Register',
+                            'Login',
                             style: TextStyle(color: Colors.white),
                           ),
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.center,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Don't have an account"),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => AgricultureSignPage(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          'Sign Up',
+                          style: TextStyle(
+                            color: Colors.green,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 SizedBox(height: 20.0),
